@@ -34,7 +34,9 @@ export default {
         minifyCSS: true,
         minifyURLs: true
       },
-      inject: true
+      inject: true,
+      hash: true,
+      showErrors: false
     }),
     new UglifyJsPlugin({
       compress: {
