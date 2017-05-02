@@ -7,6 +7,8 @@ const app = express()
 app.set('views', path.resolve(__dirname, 'views'))
 app.set('view engine', 'ejs')
 
+app.use(express.static(path.resolve(__dirname, 'wwwroot')))
+
 app.get('/', (req, res) => {
   res.render('index', {message: 'Hello from Express!'})
 })
