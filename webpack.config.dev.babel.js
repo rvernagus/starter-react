@@ -16,7 +16,7 @@ export default {
   module: {
     loaders: [
       {test: /\.js$/, exclude: /node_modules/, loaders: ['babel-loader']},
-      {test: /\.ejs$/, loaders: ['raw-loader']}
+      {test: /\.handlebars$/, loaders: ['raw-loader']}
     ]
   },
   plugins: [
@@ -24,8 +24,8 @@ export default {
       debug: true
     }),
     new HtmlWebpackPlugin({
-      template: 'src/web/html/index.ejs',
-      filename: '../views/index.ejs',
+      template: 'src/web/html/index.hbs',
+      filename: '../views/index.hbs',
       inject: true
     })
   ]
