@@ -1,8 +1,13 @@
 {
   "name": "base-dev-env",
   "version": "0.1.0",
-  "description": "Base JavaScript development environment.",
+  "description": "Base ES6 Node 7 development environment.",
   "scripts": {
+    "clean:dist": "rimraf ./dist && mkdir dist",
+    "build:dev:server": "babel src/server/devServer.js --out-file dist/server.js",
+    "build:dev:web": "webpack --config webpack.config.dev.babel.js",
+    "start:dev": "npm-run-all clean:dist build:dev:server build:dev:web server",
+    "server": "node dist/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -12,5 +17,14 @@
   "license": "MIT",
   "dependencies": {
     "express": "^4.15.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-latest": "^6.24.1",
+    "npm-run-all": "^4.0.2",
+    "rimraf": "^2.6.1",
+    "webpack": "^2.4.1"
   }
 }
