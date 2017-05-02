@@ -1,7 +1,9 @@
 import path from 'path'
+import webpack from 'webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 
 export default {
+  devtool: 'source-map',
   entry: {
     main:  path.resolve(__dirname, 'src/web/js/main.js')
   },
@@ -18,6 +20,9 @@ export default {
     ]
   },
   plugins: [
+    new webpack.LoaderOptionsPlugin({
+      debug: true
+    }),
     new HtmlWebpackPlugin({
       template: 'src/web/html/index.ejs',
       filename: '../views/index.ejs',
