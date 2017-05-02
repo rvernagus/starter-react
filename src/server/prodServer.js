@@ -1,5 +1,6 @@
 import express from 'express'
 import path from 'path'
+import compression from 'compression'
 
 const port = 8080
 const app = express()
@@ -7,6 +8,7 @@ const app = express()
 app.set('views', path.resolve(__dirname, 'views'))
 app.set('view engine', 'ejs')
 
+app.use(compression())
 app.use(express.static(path.resolve(__dirname, 'wwwroot')))
 
 app.get('/', (req, res) => {
@@ -17,6 +19,6 @@ app.listen(port, err => {
   if (err) {
     console.log(err)
   } else {
-    console.log('Running DEV server on http://localhost:' + port)
+    console.log('Running PROD server on http://localhost:' + port)
   }
 })
