@@ -1,7 +1,7 @@
 {
   "name": "base-dev-env",
   "version": "0.1.0",
-  "description": "Base ES6 Node 7 development environment.",
+  "description": "Base ES6, Express, Node development environment.",
   "scripts": {
     "clean:dist": "rimraf ./dist && mkdir dist",
     "build:dev:server": "babel src/server/devServer.js --out-file dist/server.js",
