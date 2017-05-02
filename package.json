@@ -1,0 +1,13 @@
+{
+  "name": "base-dev-env",
+  "version": "0.1.0",
+  "description": "Base JavaScript development environment.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "js"
+  ],
+  "author": "Ray Vernagus",
+  "license": "MIT"
+}
