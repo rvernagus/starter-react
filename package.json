@@ -8,9 +8,12 @@
     "build:prod:server": "babel src/server/prodServer.js --out-file dist/server.js",
     "build:dev:web": "webpack --config webpack.config.dev.babel.js",
     "build:prod:web": "webpack --config webpack.config.prod.babel.js",
-    "start:dev": "npm-run-all clean:dist build:dev:server build:dev:web server",
-    "start": "npm-run-all clean:dist build:prod:server build:prod:web server",
+    "prestart:dev": "npm-run-all clean:dist build:dev:server build:dev:web",
     "server": "node dist/server.js",
+    "watch": "npm run build:dev:web -- --watch",
+
+    "start:dev": "npm-run-all --parallel server watch",
+    "start": "npm-run-all clean:dist build:prod:server build:prod:web server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

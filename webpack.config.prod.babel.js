@@ -2,7 +2,7 @@ import path from 'path'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import UglifyJsPlugin from 'uglifyjs-webpack-plugin'
 
-const config = {
+export default {
   entry: {
     main:  path.resolve(__dirname, 'src/web/js/main.js')
   },
@@ -43,5 +43,3 @@ const config = {
     })
   ]
 }
-
-module.exports = config
