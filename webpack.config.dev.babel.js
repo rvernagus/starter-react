@@ -1,4 +1,5 @@
 import path from 'path'
+import HtmlWebpackPlugin from 'html-webpack-plugin'
 
 const config = {
   entry: {
@@ -7,13 +8,22 @@ const config = {
   target: 'web',
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname, 'dist/wwwroot')
+    path: path.resolve(__dirname, 'dist/wwwroot'),
+    publicPath: '/'
   },
   module: {
     loaders: [
-      {test: /\.js$/, exclude: /node_modules/, loaders: ['babel-loader']}
+      {test: /\.js$/, exclude: /node_modules/, loaders: ['babel-loader']},
+      {test: /\.ejs$/, loaders: ['raw-loader']}
     ]
-  }
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: 'src/web/html/index.ejs',
+      filename: '../views/index.ejs',
+      inject: true
+    })
+  ]
 }
 
 module.exports = config

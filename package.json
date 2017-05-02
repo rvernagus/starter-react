@@ -16,6 +16,7 @@
   "author": "Ray Vernagus",
   "license": "MIT",
   "dependencies": {
+    "ejs": "^2.5.6",
     "express": "^4.15.2"
   },
   "devDependencies": {
@@ -23,7 +24,9 @@
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
     "babel-preset-latest": "^6.24.1",
+    "html-webpack-plugin": "^2.28.0",
     "npm-run-all": "^4.0.2",
+    "raw-loader": "^0.5.1",
     "rimraf": "^2.6.1",
     "webpack": "^2.4.1"
   }
