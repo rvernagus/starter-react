@@ -14,14 +14,13 @@ export default {
   },
   module: {
     loaders: [
-      {test: /\.js$/, exclude: /node_modules/, loaders: ['babel-loader']},
-      {test: /\.handlebars$/, loaders: ['raw-loader']}
+      {test: /\.js$/, exclude: /node_modules/, loaders: ['babel-loader']}
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'src/web/html/index.hbs',
-      filename: '../views/index.hbs',
+      template: 'src/web/html/index.html',
+      filename: 'index.html',
       minify: {
         removeComments: true,
         collapseWhitespace: true,
