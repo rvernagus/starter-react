@@ -32,16 +32,13 @@
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
     "babel-preset-latest": "^6.24.1",
-<<<<<<< HEAD
-    "babel-preset-react": "^6.24.1",
-=======
     "eslint": "^3.19.0",
     "eslint-cli": "^1.1.0",
     "eslint-config-airbnb": "^14.1.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.10.3",
->>>>>>> b1fc0438ac432e99310fd716ec8ac8454de3afd2
+    "babel-preset-react": "^6.24.1",
     "html-webpack-plugin": "^2.28.0",
     "npm-run-all": "^4.0.2",
     "raw-loader": "^0.5.1",
