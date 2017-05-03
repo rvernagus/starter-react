@@ -40,11 +40,8 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.10.3",
-<<<<<<< HEAD
     "babel-preset-react": "^6.24.1",
-=======
     "extract-text-webpack-plugin": "^2.1.0",
->>>>>>> 9b3cf09e04feec6b7c0a05b28b625d664f37ceaf
     "html-webpack-plugin": "^2.28.0",
     "node-sass": "^4.5.2",
     "npm-run-all": "^4.0.2",
