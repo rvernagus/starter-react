@@ -1,4 +1,5 @@
 import path from 'path'
+import webpack from 'webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import UglifyJsPlugin from 'uglifyjs-webpack-plugin'
 
@@ -36,6 +37,11 @@ export default {
       inject: true,
       hash: true,
       showErrors: false
+    }),
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('production')
+      }
     }),
     new UglifyJsPlugin({
       compress: {

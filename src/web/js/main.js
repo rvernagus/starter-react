@@ -1,1 +1,7 @@
-console.log('Hello from main.js!')
+import React from 'react'
+import {render} from 'react-dom'
+
+render(
+  <h1>React Dev Env</h1>,
+  document.getElementById('app')
+)
