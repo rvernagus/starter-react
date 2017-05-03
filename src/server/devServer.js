@@ -5,13 +5,11 @@ import morgan from 'morgan'
 const port = 8080
 const app = express()
 
-app.set('views', path.resolve(__dirname, 'views'))
-
 app.use(morgan('combined'))
 app.use(express.static(path.resolve(__dirname, 'wwwroot')))
 
 app.get('/', (req, res) => {
-  res.render('index', { message: 'Hello from Express!' })
+  res.sendFile('index.html')
 })
 
 app.listen(port, (err) => {
