@@ -1,6 +1,7 @@
 import path from 'path'
 import webpack from 'webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
+import ExtractTextPlugin from 'extract-text-webpack-plugin'
 
 export default {
   devtool: 'source-map',
@@ -15,7 +16,12 @@ export default {
   },
   module: {
     loaders: [
+<<<<<<< HEAD
       {test: /\.jsx?$/, exclude: /node_modules/, loaders: ['babel-loader']}
+=======
+      {test: /\.js$/, exclude: /node_modules/, loaders: ['babel-loader']},
+      {test: /\.scss$/, loader: ExtractTextPlugin.extract('css-loader!sass-loader')}
+>>>>>>> 9b3cf09e04feec6b7c0a05b28b625d664f37ceaf
     ]
   },
   plugins: [
@@ -26,6 +32,11 @@ export default {
       template: 'src/web/html/index.html',
       filename: 'index.html',
       inject: true
+    }),
+    new ExtractTextPlugin({
+      filename: 'main.css',
+      disable: false,
+      allChunks: true
     })
   ]
 }
