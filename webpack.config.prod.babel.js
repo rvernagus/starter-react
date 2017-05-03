@@ -5,7 +5,7 @@ import UglifyJsPlugin from 'uglifyjs-webpack-plugin'
 
 export default {
   entry: {
-    main:  path.resolve(__dirname, 'src/web/js/main.js')
+    main:  path.resolve(__dirname, 'src/web/js/main.jsx')
   },
   target: 'web',
   output: {
@@ -15,7 +15,7 @@ export default {
   },
   module: {
     loaders: [
-      {test: /\.js$/, exclude: /node_modules/, loaders: ['babel-loader']}
+      {test: /\.jsx$/, exclude: /node_modules/, loaders: ['babel-loader']}
     ]
   },
   plugins: [
