@@ -1,7 +1,7 @@
 {
   "name": "base-dev-env",
   "version": "0.1.0",
-  "description": "Base ES6, Express, Node development environment.",
+  "description": "Base ES6, React, Express, Node development environment.",
   "scripts": {
     "clean:dist": "rimraf ./dist && mkdir dist",
     "build:dev:server": "babel src/server/devServer.js --out-file dist/server.js",
@@ -9,7 +9,7 @@
     "build:dev:web": "webpack --config webpack.config.dev.babel.js",
     "build:prod:web": "webpack --config webpack.config.prod.babel.js",
     "lint": "babel-node node_modules/eslint/bin/eslint.js -- src/**",
-    "prestart:dev": "npm-run-all clean:dist build:dev:server build:dev:web",
+    "prestart:dev": "npm-run-all lint clean:dist build:dev:server build:dev:web",
     "server": "node dist/server.js",
     "watch": "npm run build:dev:web -- --progress --colors --watch",
     "start:dev": "npm-run-all --parallel server watch",
