@@ -1,6 +1,7 @@
 import path from 'path'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import UglifyJsPlugin from 'uglifyjs-webpack-plugin'
+import ExtractTextPlugin from 'extract-text-webpack-plugin'
 
 export default {
   entry: {
@@ -14,7 +15,8 @@ export default {
   },
   module: {
     loaders: [
-      {test: /\.js$/, exclude: /node_modules/, loaders: ['babel-loader']}
+      {test: /\.js$/, exclude: /node_modules/, loaders: ['babel-loader']},
+      {test: /\.scss$/, loader: ExtractTextPlugin.extract('css-loader?minimize!sass-loader')}
     ]
   },
   plugins: [
@@ -41,6 +43,11 @@ export default {
       compress: {
         warnings: false
       }
+    }),
+    new ExtractTextPlugin({
+      filename: 'main.css',
+      disable: false,
+      allChunks: true
     })
   ]
 }
