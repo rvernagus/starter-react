@@ -16,12 +16,8 @@ export default {
   },
   module: {
     loaders: [
-<<<<<<< HEAD
-      {test: /\.jsx?$/, exclude: /node_modules/, loaders: ['babel-loader']}
-=======
-      {test: /\.js$/, exclude: /node_modules/, loaders: ['babel-loader']},
+      {test: /\.jsx?$/, exclude: /node_modules/, loaders: ['babel-loader']},
       {test: /\.scss$/, loader: ExtractTextPlugin.extract('css-loader!sass-loader')}
->>>>>>> 9b3cf09e04feec6b7c0a05b28b625d664f37ceaf
     ]
   },
   plugins: [
