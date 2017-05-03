@@ -12,10 +12,10 @@ app.get('/', (req, res) => {
   res.sendFile('index.html')
 })
 
-app.listen(port, err => {
+app.listen(port, (err) => {
   if (err) {
-    console.log(err)
+    console.log(err) // eslint-disable-line no-console
   } else {
-    console.log('Running PROD server on http://localhost:' + port)
+    console.log(`Running PROD server on http://localhost: ${port}`) // eslint-disable-line no-console
   }
 })
