@@ -3,36 +3,54 @@ import webpack from 'webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
 
-export default {
-  devtool: 'source-map',
-  entry: {
-    main:  path.resolve(__dirname, 'src/web/js/main.js')
-  },
-  target: 'web',
-  output: {
-    filename: '[name].js',
-    path: path.resolve(__dirname, 'dist/wwwroot'),
-    publicPath: '/'
-  },
-  module: {
-    loaders: [
-      {test: /\.js$/, exclude: /node_modules/, loaders: ['babel-loader']},
-      {test: /\.scss$/, loader: ExtractTextPlugin.extract('css-loader!sass-loader')}
+export default [
+  {
+    devtool: 'source-map',
+    entry: {
+      main:  path.resolve(__dirname, 'src/web/js/main.js')
+    },
+    target: 'web',
+    output: {
+      filename: '[name].js',
+      path: path.resolve(__dirname, 'dist/wwwroot'),
+      publicPath: '/'
+    },
+    module: {
+      loaders: [
+        {test: /\.js$/, exclude: /node_modules/, loaders: ['babel-loader']},
+        {test: /\.scss$/, loader: ExtractTextPlugin.extract('css-loader!sass-loader')}
+      ]
+    },
+    plugins: [
+      new webpack.LoaderOptionsPlugin({
+        debug: true
+      }),
+      new HtmlWebpackPlugin({
+        template: 'src/web/html/index.html',
+        filename: 'index.html',
+        inject: true
+      }),
+      new ExtractTextPlugin({
+        filename: 'main.css',
+        disable: false,
+        allChunks: true
+      })
     ]
   },
-  plugins: [
-    new webpack.LoaderOptionsPlugin({
-      debug: true
-    }),
-    new HtmlWebpackPlugin({
-      template: 'src/web/html/index.html',
-      filename: 'index.html',
-      inject: true
-    }),
-    new ExtractTextPlugin({
-      filename: 'main.css',
-      disable: false,
-      allChunks: true
-    })
-  ]
-}
+  {
+    entry: {
+      main:  path.resolve(__dirname, 'src/server/devServer.js')
+    },
+    target: 'node',
+    output: {
+      filename: 'server.js',
+      path: path.resolve(__dirname, 'dist')
+    },
+    module: {
+      loaders: [
+        {test: /\.js$/, exclude: /node_modules/, loaders: ['babel-loader']}
+      ]
+    },
+    plugins: [ ]
+  }
+]

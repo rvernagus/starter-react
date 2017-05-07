@@ -4,16 +4,14 @@
   "description": "Base ES6, Express, Node development environment.",
   "scripts": {
     "clean:dist": "rimraf ./dist && mkdir dist",
-    "build:dev:server": "babel src/server/devServer.js --out-file dist/server.js",
-    "build:prod:server": "babel src/server/prodServer.js --out-file dist/server.js",
     "build:dev:web": "webpack --config webpack.config.dev.babel.js",
     "build:prod:web": "webpack --config webpack.config.prod.babel.js",
     "lint": "babel-node node_modules/eslint/bin/eslint.js -- src/**",
-    "prestart:dev": "npm-run-all clean:dist build:dev:server build:dev:web",
+    "prestart:dev": "npm-run-all clean:dist build:dev:web",
     "server": "node dist/server.js",
     "watch": "npm run build:dev:web -- --progress --colors --watch",
     "start:dev": "npm-run-all --parallel server watch",
-    "start": "npm-run-all clean:dist build:prod:server build:prod:web server",
+    "start": "npm-run-all clean:dist build:prod:web server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
