@@ -2,6 +2,7 @@ import path from 'path'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import UglifyJsPlugin from 'uglifyjs-webpack-plugin'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
+import nodeExternals from 'webpack-node-externals'
 
 export default [
   {
@@ -56,7 +57,12 @@ export default [
     entry: {
       main:  path.resolve(__dirname, 'src/server/prodServer.js')
     },
+    externals: [nodeExternals()],
     target: 'node',
+    node: {
+      __dirname: false,
+      __filename: false,
+    },
     output: {
       filename: 'server.js',
       path: path.resolve(__dirname, 'dist')
