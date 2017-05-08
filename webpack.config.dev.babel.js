@@ -44,6 +44,10 @@ export default [
     },
     externals: [nodeExternals()],
     target: 'node',
+    node: {
+      __dirname: false,
+      __filename: false,
+    },
     output: {
       filename: 'server.js',
       path: path.resolve(__dirname, 'dist')

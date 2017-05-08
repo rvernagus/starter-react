@@ -46,6 +46,7 @@
     "style-loader": "^0.17.0",
     "uglify-js": "^2.8.22",
     "uglifyjs-webpack-plugin": "^0.4.3",
-    "webpack": "^2.4.1"
+    "webpack": "^2.4.1",
+    "webpack-node-externals": "^1.5.4"
   }
 }
