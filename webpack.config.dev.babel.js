@@ -2,6 +2,7 @@ import path from 'path'
 import webpack from 'webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
+import nodeExternals from 'webpack-node-externals'
 
 export default [
   {
@@ -41,6 +42,7 @@ export default [
     entry: {
       main:  path.resolve(__dirname, 'src/server/devServer.js')
     },
+    externals: [nodeExternals()],
     target: 'node',
     output: {
       filename: 'server.js',
