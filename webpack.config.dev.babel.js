@@ -22,6 +22,9 @@ export default [
         {test: /\.jsx$/, exclude: /node_modules/, loaders: ['babel-loader']}
       ]
     },
+    resolve: {
+      extensions: ['*', '.js', '.jsx']
+    },
     plugins: [
       new webpack.LoaderOptionsPlugin({
         debug: true

@@ -22,6 +22,9 @@ export default [
         {test: /\.jsx$/, exclude: /node_modules/, loaders: ['babel-loader']}
       ]
     },
+    resolve: {
+      extensions: ['*', '.js', '.jsx']
+    },
     plugins: [
       new HtmlWebpackPlugin({
         template: 'src/web/html/app.html',
