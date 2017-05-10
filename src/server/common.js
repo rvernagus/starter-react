@@ -9,8 +9,8 @@ export const setupUses = (app) => {
 }
 
 export const setupRoutes = (app) => {
-  app.get('/', (req, res) => {
-    res.sendFile('index.html', root)
+  app.get('*', (req, res) => {
+    res.sendFile('app.html', root)
   })
 }
 

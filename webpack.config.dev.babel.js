@@ -27,8 +27,8 @@ export default [
         debug: true
       }),
       new HtmlWebpackPlugin({
-        template: 'src/web/html/index.html',
-        filename: 'index.html',
+        template: 'src/web/html/app.html',
+        filename: 'app.html',
         inject: true
       }),
       new ExtractTextPlugin({

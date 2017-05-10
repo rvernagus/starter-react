@@ -24,8 +24,8 @@ export default [
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: 'src/web/html/index.html',
-        filename: 'index.html',
+        template: 'src/web/html/app.html',
+        filename: 'app.html',
         minify: {
           removeComments: true,
           collapseWhitespace: true,
